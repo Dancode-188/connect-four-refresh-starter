@@ -23,11 +23,27 @@ class Cursor {
   }
 
   left() {
-    // Move cursor left
+    this.resetBackgroundColor();
+    this.col = Math.max(0, this.col - 1);
+    this.setBackgroundColor();
   }
 
   right() {
-    // Move cursor right
+    this.resetBackgroundColor();
+    this.col = Math.min(this.numCols - 1, this.col + 1);
+    this.setBackgroundColor();
+  }
+
+  up() {
+    this.resetBackgroundColor();
+    this.row = Math.max(0, this.row - 1);
+    this.setBackgroundColor();
+  }
+
+  down() {
+    this.resetBackgroundColor();
+    this.row = Math.min(this.numRows - 1, this.row + 1);
+    this.setBackgroundColor;
   }
 
 }
